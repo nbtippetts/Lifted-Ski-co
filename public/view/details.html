@@ -1,0 +1,31 @@
+  <div class="details-head">
+    <h2>SKIS/</h2>
+    <br />
+    <h1>{{skis.name}}</h1>
+  </div>
+  <br />
+  <div class="get-ski">
+    <img ng-src="{{skis.image}}" alt="skis.image" width="100%" height="100%"></img>
+    <div class="ski-info">
+        <ul>
+          <li><h3>{{skis.description}}</h3></li>
+          <br />
+          <li><h2>${{skis.price}}.00</h2></li>
+          <br />
+          <li><button ng-click="getSki(id)">Add To Cart</button></li>
+          <br />
+          <li><iframe width="500" height="300" src="https://www.youtube.com/embed/vDDRM90_rq4" frameborder="0" allowfullscreen></iframe></li>
+       </ul>
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="details-container">
+      <h2>Details</h2>
+      {{skis.details}}
+      </div>
+      <div class="specs-info">
+        <h2>SPECS:</h2>
+        {{skis.specs}}
+      </div>
+  </div>

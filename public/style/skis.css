@@ -1,0 +1,45 @@
+.skis-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.skis-wrapper {
+  border: 3px solid white;
+  border-style: outset;
+  width: 230px;
+  background-color: #f4f3f3;
+}
+
+.skis-wrapper img {
+  height: 400px;
+  width: inherit;
+}
+
+.skis-wrapper ul {
+    padding: 0;
+    padding-bottom: 7%;
+    position: relative;
+    border: 4px solid #ada8a8;
+    background-color: whitesmoke;
+    margin-top: -45%;
+    border-top-style: groove;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+}
+
+.skis-wrapper ul li {
+  list-style: none;
+  text-align: center;
+  color: #191e16;
+}
+
+.skis-wrapper ul li h3:hover {
+  color: #9c0000;
+  list-style: none;
+  text-align: center;
+}

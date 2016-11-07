@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="liftedSki">
+  <head>
+    <meta charset="utf-8">
+    <title>LiftedSkiCo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/home.css" media="screen"/>
+    <link rel="stylesheet" href="./style/skis.css" media="screen"/>
+    <link rel="stylesheet" href="./style/details.css" media="screen"/>
+    <link rel="stylesheet" href="./style/video.css" media="screen"/>
+  </head>
+  <body>
+
+ <section class="header">
+   <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" ui-sref="home">LIFTED SKI.co</a>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a ui-sref="home">LIFTED</a></li>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">SKIS & GEAR <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li><a ui-sref="skis">SKIS</a></li>
+             <li><a ui-sref="video">VIDEOS</a></li>
+           </ul>
+         </li>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">JOIN THE CREW <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+               <h2>Sign up!</h2>
+               <form class="newUser">
+            		    <input id="username" type="text" ng-model="user.username" placeholder="Username">
+                    <br/>
+                    <input id="email" type="text" ng-model="user.email" placeholder="Email Address">
+                    <br/>
+                    <input id="password" type="text" ng-model="user.password" placeholder="Password">
+                    <br/>
+                    <button ng-click="newUser(user)">BECOME A CREW MEMBER</button>
+               </form>
+            </div>
+          </ul>
+        </li>
+         <!-- <li><a href="#">Page 2</a></li>
+         <li><a href="#">Page 3</a></li> -->
+       </ul>
+   </nav>
+  </section>
+
+    <ui-view></ui-view>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+      <script src="./js/app.js"></script>
+      <script src="./js/service.js"></script>
+      <script src="./js/controllers/homeCtrl.js"></script>
+      <script src="./js/controllers/skisCtrl.js"></script>
+      <script src="./js/controllers/detailsCtrl.js"></script>
+  </body>
+</html>

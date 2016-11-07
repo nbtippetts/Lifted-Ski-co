@@ -1,0 +1,134 @@
+-- CREATE TABLE skis (
+--   ID SERIAL PRIMARY KEY NOT NULL,
+--   name VARCHAR(50),
+--   price INT,
+--   description TEXT,
+--   details TEXT,
+--   image TEXT,
+--   specs TEXT
+-- )
+
+-- CREATE TABLE users (
+--   ID SERIAL PRIMARY KEY NOT NULL,
+    --  username VARCHAR(50),
+--   email VARCHAR(50),
+--   password VARCHAR(50)
+-- )
+--
+-- CREATE TABLE poles (
+--   ID SERIAL PRIMARY KEY NOT NULL,
+--   name VARCHAR(50),
+--   price INT,
+--   description TEXT,
+--   details TEXT,
+--   image TEXT
+-- )
+--
+-- SPECS:
+-- 'Waist Width mm: 124
+-- Length cm: 188 cm
+-- Shape mm: 147-124-146
+-- Sidecut m: 17 (188 cm)
+-- Stance mm: -20 Erics Choice
+-- Weight: 2100g/ski (188)
+-- Profile mm: 12-4-12
+-- (Tip Early Rise-Camber-Tail Early Rise)'
+--
+--
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--   VALUES ('MAGNUM OPUS BY ERIC POLLARD', 950.00, 'ERIC POLLARD\\S GREATEST CREATION', 'The Magnum Opus rises above all powder skis with award-winning, intuitive edge-to-edge precision and impossibly lightweight performance brought to you by LINE pro Eric Pollard. The Opus is playful yet stable, with all-new bamboo sidewalls this season which add greater durability and dampness to your ride. With Pollard’s hunger for more funner skiing and 15 years of industry-leading powder ski innovation to back it up, the LINE Magnum Opus just keeps on singing.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_magnum-opus_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 124,
+--     Length cm: 188 cm,
+--     Shape mm: 147-124-146,
+--     Sidecut m: 17 (188 cm),
+--     Stance mm: -20 Erics Choice,
+--     Weight: 2100g/ski (188),
+--     Profile mm: 12-4-12,
+--     (Tip Early Rise-Camber-Tail Early Rise)');
+--  INSERT INTO skis (name, price, description, details, image, specs)
+--    VALUES ('PESCADO BY ERIC POLLARD', 1050.00, 'SURF THE SNOW AND PLAY ON EVERYTHING', '/pesk.’ka.do/ – A fish that’s been caught. LINE athlete Eric Pollard has been tracking the Pescado for years, and he’s finally ready to dish it out this season. A directional, surfy ski with bamboo sidewalls, Partly Cloudy Core™, and a veneer topsheet with a timeless graphic, the LINE Pescado fuses the best of surfing, art, and skiing with an innovative fish shape and swallow tail that’ll carve deeper and float faster.
+--     “The Pescado, much like the Magnum Opus, is the culmination of years of hard work with LINE and myself.” – Eric Pollard', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_pescado_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 125
+--     Length cm: 180,
+--     Shape mm: 158-125-147,
+--     Sidecut m: 19 (180 cm),
+--     Stance mm: -80,
+--     Weight: Weight: 1950 g/ski (180),
+--     Profile mm: 20-4-1,
+--     (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--   VALUES ('MORDECAI BY ERIC POLLARD', 950.00, 'EP\\S EVERYTHING SKI', 'The Mordecai – meaning, “warrior,” of course – is LINE pro Eric Pollard’s wider all terrain ski that’s prepared to slash, butter, and smear any and every feature the mountain lays before you. This is the predecessor of Mr. Pollard’s award-winning Opus ski. Nimble and playful through pow and crud alike, with an excellent weight-to-strength ratio, the LINE Mordecai’s Symmetric Flex™ and lightweight Partly Cloudy Core™ platform is your tool for all manners of all-mountain mayhem.
+--     “The Mordecai is an extension of my drive for a better ski.” – Eric Pollard', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_mordecai_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 114
+--     Length cm: 179, 186, 193,
+--     Shape mm: 141-114-138,
+--     Sidecut m: 17 (186cm),
+--     Stance mm: Erics Choice -20 / Recommended -60,
+--     Weight: Weight: 2,029 g/ski (186),
+--     Profile mm: 15-5-15,
+--     (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--   VALUES ('SIR FRANCIS BACON BY ERIC POLLARD', 850.00, 'BACON IS ALWAYS A GOOD idea', 'The new Sir Francis Bacon is a refined, everyday ski that delivers an even better all-mountain ride – the kind of ride that made this ski famous in the first place. Sir Bacon was a scientific revolutionary, and this award-winning ski is LINE athlete Eric Pollard’s contribution to the movement – a narrower waist for a lighter, speedier ride, with five radii blended into the overall sidecut for intuitive control. As Eric describes it, The Sir Francis Bacon floats through milky snow, carves the hardpack, and has a buttery personality.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_sir-francis-bacon_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 104
+    -- Length cm: 178, 184, 190,
+    -- Shape mm: 135-104-131,
+    -- Sidecut m: 17.4 (184cm),
+    -- Stance mm: Erics Choice -20 / Recommended -60,
+    -- Weight: Weight: 2,045 g/ski (186),
+    -- Profile mm: 9-3-9,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+  -- VALUES ('TOM WALLISCH PRO', 550.00, 'THE BEST DEMANDS THE BEST', 'This is LINE pro Tom Wallisch’s ski. It goes wherever Tom goes. On trails, on rails, off jumps, through bumps, on wall rides and long car rides, on airplanes, on chairlifts, on podiums, on quad kinks… you get the picture. Tom packed these skis with slight Early Rise™ and Early Taper ™ that work together to create catch free spins and an ultra-light swing weight. Our revamped Carbon Ollieband™ is the real kicker, packing more ollie power than anything previously imagined. Brand-new this year, you finally have the opportunity to ride like Tom – if you want to go where Tom goes, you’ve gotta be riding the new LINE Tom Wallisch Pro Ski.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_tom-wallisch-pro_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 90
+    -- Length cm: 164, 171, 178,
+    -- Shape mm: 117-90-112,
+    -- Sidecut m: 20.8 (178 cm),
+    -- Stance mm: -30,
+    -- Weight: 1802 g/ski (178 cm),
+    -- Profile mm: 1-6-1,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--  VALUES ('BLEND', 750.00, 'A BLEND OF FREESTYLE FUN', 'The LINE Blend is a freestyle ski with not an ounce of emotional baggage. A wide platform and a forgiving flex make this ski a buttery toy that helps you press, jump, spin, and just get more creative with your skiing. LINE pro Will Wesson uses the Blend as his go-everywhere and do-everything freestyle ski, turning the entire mountain into his own playground. Wesson is known to slay mid-winter pow and then send ‘er through spring park laps just as easily thanks to the Blend’s Sintered Fatty™ base. This ski keeps it light for effortless park performance while delivering stability and power at high speeds. Want to ride the stick that Will used to win an X-Games gold? Ride the LINE Blend.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_blend_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 100
+    -- Length cm: 171, 178, 185,
+    -- Shape mm: 132-100-122,
+    -- Sidecut m: 21 (178cm),
+    -- Stance mm: -40,
+    -- Weight: 1,935 g/ski (178cm),
+    -- Profile mm: 4-4-4,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--  VALUES ('CHRONIC', 625.00, 'THE MOST DEMANDED FREESTYLE SKI EVER', 'You don’t even need to read this. We know that you know that LJ Strenio knows that everybody knows that Strenio’s LINE Chronic is the original freestyle ski that sets the standard for the rest of them. Its Fatty™ base and edge pack 30% thicker P-Tex and steel for a more durable punch, and its unique Early Rise™ makes turn initiation easy through all conditions. This means easier take-offs and landings in tracked-out parks! The LINE Chronic will destroy the streets with lightning-fast reflexes then maintain precision everywhere else on the hill.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_chronic_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 92
+    -- Length cm: 164, 171, 178, 185,
+    -- Shape mm: 121-92-117,
+    -- Sidecut m: 19 (178cm),
+    -- Stance mm: -40,
+    -- Weight: 1,798 g/ski (178cm),
+    -- Profile mm: 2-5-2,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--  VALUES ('HONEY BADGER', 500.00, 'HONEY BADGER DONT CARE!', 'Khai Krepela is bringing new blood to the LINE pro team, and he is already picked the brand-new Honey Badger as his tool-of-choice because… well, it just don’t give a sh*t. Designed by LINE to be tough as nails with a classic bamboo core and 4D Fibercap™ fiberglass construction, this spunky park ski has the right amount of bite to kick ass in the street and then take you all over the mountain, too. A replacement upgrade from the legendary Afterbang skis, the LINE Honey Badger is simple, but it’s far from plain.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_honey-badger_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 92
+    -- Length cm: 155, 166, 172, 177,
+    -- Shape mm: 120-92-116,
+    -- Sidecut m: 19.4 (177 cm),
+    -- Stance mm: -30,
+    -- Weight: 1650 g/ski (177 cm),
+    -- Profile mm: 3-3-3,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--  VALUES ('TIGERSNAKE', 450.00, 'HALF TIGER, HALF SNAKE, ALL TEETH', 'The award-winning LINE Tigersnake is your ticket for slipping through trees and pouncing off jumps this season without going bankrupt. Designed by LINE pro Andy Parry and our expert engineerds using real experience and real math, the Tigersnake is the most thoughtfully tech-filled and lightest all-terrain freestyle ski on the market at such an affordable price. Our signature Carbon Ollieband™ adds even more pop than you thought possible. Andy Parry approves this message.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_tigersnake_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 88
+    -- Length cm: 157, 164, 171, 178,
+    -- Shape mm: 113-88-109,
+    -- Sidecut m: 19.9 (178cm),
+    -- Stance mm: -25,
+    -- Weight: 1650 g/ski (178cm),
+    -- Profile mm: 3-4-3,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+-- INSERT INTO skis (name, price, description, details, image, specs)
+--  VALUES ('SICK DAY 102', 800.00, 'MORE REASON TO CALL IN SICK', 'The Sick Day 102 is your new perfect excuse to ditch that morning meeting, cause it’s the perfect – and award-winning – mix of our speedy 95 and our surfy 110 waist widths. Catch first tracks in the AM and send it on hardpack in the PM – TPS reports can wait. “Skiing has always been fun,” says Jeff, “and it just took the right ski to remind me how much fun I could have outside the park.” The Sick Day 102 is already a classic, but it began as LINE contribution to more funner skiing and making playing hooky well worth it.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_sick-day-102_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 102
+    -- Length cm: 172, 179, 186,
+    -- Shape mm: 135-102-120,
+    -- Sidecut m: 17.1 (179cm),
+    -- Stance mm: -75,
+    -- Weight: 1900 g/sk (179cm),
+    -- Profile mm: 8-4-3,
+    -- (Tip Early Rise-Camber-Tail Early Rise)');
+
+INSERT INTO users (username, email, password)
+ VALUES ($1,
+         $2,
+         $3)
