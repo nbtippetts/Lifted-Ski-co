@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/skis.css" media="screen"/>
     <link rel="stylesheet" href="./style/details.css" media="screen"/>
     <link rel="stylesheet" href="./style/video.css" media="screen"/>
+    <link rel="stylesheet" href="./style/team.css" media="screen"/>
   </head>
   <body>
 
@@ -20,11 +21,13 @@
        <ul class="nav navbar-nav">
          <li class="active"><a ui-sref="home">LIFTED</a></li>
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">SKIS & GEAR <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-             <li><a ui-sref="skis">SKIS</a></li>
-             <li><a ui-sref="video">VIDEOS</a></li>
+           <ul class="dropdown-menu" id="dropdown1">
+             <li><a ui-sref="skis"><h1>SKIS</h1>  <img src="http://us.123rf.com/450wm/miceking/miceking1506/miceking150602616/41477596-skis-snowflakes-croises.jpg" alt="ski image" height="80px" width="50px"/></a></li>
+             <li><a ui-sref="poles"><h1>POLES</h1>  <img src="http://www.iconshock.com/img_vista/IPHONE/sports/jpg/ski_poles_icon.jpg" alt="poles image" height="80px" width="60px"/></a></li>
+             <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="http://marienthal.snj.lu/sites/default/files/plainicon.com-46501-256px-930_0.png" alt="video icon" height="50px" width="50px" /></a></li>
            </ul>
          </li>
+         <li><a ui-sref="team">The Team</a></li>
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">JOIN THE CREW <span class="caret"></span></a>
            <ul class="dropdown-menu">
                <h2>Sign up!</h2>
@@ -35,15 +38,13 @@
                     <br/>
                     <input id="password" type="text" ng-model="user.password" placeholder="Password">
                     <br/>
-                    <button ng-click="newUser(user)">BECOME A CREW MEMBER</button>
+                    <button ng-sref="home" ng-click="newUser(user)">BECOME A CREW MEMBER</button>
                </form>
-            </div>
-          </ul>
-        </li>
-         <!-- <li><a href="#">Page 2</a></li>
-         <li><a href="#">Page 3</a></li> -->
+             </ul>
+           </li>
+         </div>
        </ul>
-   </nav>
+    </nav>
   </section>
 
     <ui-view></ui-view>
@@ -58,5 +59,9 @@
       <script src="./js/controllers/homeCtrl.js"></script>
       <script src="./js/controllers/skisCtrl.js"></script>
       <script src="./js/controllers/detailsCtrl.js"></script>
+      <script src="./js/controllers/polesCtrl.js"></script>
+      <script src="./js/controllers/poleDetailsCtrl.js"></script>
+      <script src="./js/controllers/teamCtrl.js"></script>
+      <script src="./js/controllers/teamDetailsCtrl.js"></script>
   </body>
 </html>

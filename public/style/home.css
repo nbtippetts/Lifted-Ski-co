@@ -6,3 +6,46 @@
 .dropdown {
   cursor: pointer;
 }
+
+ul #dropdown1 {
+  width: 500%;
+  height: inherit;
+}
+
+ul #dropdown1 li {
+  display: table-cell;
+}
+
+ul #dropdown1 li a {
+  display: flex;
+  letter-spacing: 2px;
+  align-items: center;
+}
+
+.dropdown h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul .dropdown-menu {
+  width: 150%;
+  height: 250px;
+}
+
+.newUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newUser button {
+  height: 40px;
+  width: 90%;
+  background-color: #333;
+  color: white;
+}
+
+.newUser input {
+  border: 1px solid darkgray;
+  width: 90%;
+}

@@ -36,6 +36,14 @@
 
   app.get('/api/skis', serverCtrl.getAll);
 
+  app.get('/api/poles/pole:id', serverCtrl.getSkiPoles);
+
+  app.get('/api/poles', serverCtrl.getAllPoles);
+
+  app.get('/api/teams', serverCtrl.getTeams);
+
+  app.get('/api/teams/team:id', serverCtrl.getTeam);
+
   app.post('/api/user', serverCtrl.newUser);
 
 

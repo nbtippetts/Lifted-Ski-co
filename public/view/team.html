@@ -1,0 +1,7 @@
+<div class="team-container">
+  <div class="team-wrapper" ng-repeat="team in teams">
+    <img src="{{team.profileimg}}" alt="team.profileimg" height="100%" width="100%" />
+    <button ui-sref="teamDetails({id: team.id})">{{team.name}}</button>
+  </div>
+
+</div>

@@ -1,0 +1,3 @@
+SELECT *
+FROM teams
+WHERE ID = $1

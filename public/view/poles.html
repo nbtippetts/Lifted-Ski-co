@@ -1,0 +1,10 @@
+<h1>SKI POLES/</h1>
+<div class="skis-container">
+  <div class="skis-wrapper" ng-repeat="poles in allPoles">
+     <img ng-src="{{poles.image}}" alt="poles.image" width="100%" height="100%" ui-sref="poleDetails({ID: pole.id})"></img>
+     <ul>
+      <li><h3 ui-sref="poleDetails({id: poles.id})">{{poles.name}}</h3></li>
+      <li><h4>${{poles.price}}.00</h4></li>
+    </ul>
+  </div>
+</div>

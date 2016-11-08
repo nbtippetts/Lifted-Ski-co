@@ -8,33 +8,32 @@
 --   specs TEXT
 -- )
 
--- CREATE TABLE users (
---   ID SERIAL PRIMARY KEY NOT NULL,
-    --  username VARCHAR(50),
---   email VARCHAR(50),
---   password VARCHAR(50)
--- )
---
+ CREATE TABLE users (
+   ID SERIAL PRIMARY KEY NOT NULL,
+   username VARCHAR(50),
+   email VARCHAR(50),
+   password VARCHAR(50)
+ )
+
+ -- CREATE TABLE teams (
+ --   ID SERIAL PRIMARY KEY NOT NULL,
+ --   name VARCHAR(50),
+ --   age INT,
+ --   homemountain TEXT,
+ --   profileimg TEXT,
+ --   bio TEXT
+ -- )
+
 -- CREATE TABLE poles (
 --   ID SERIAL PRIMARY KEY NOT NULL,
 --   name VARCHAR(50),
 --   price INT,
 --   description TEXT,
 --   details TEXT,
---   image TEXT
+--   image TEXT,
+--   specs TEXT
 -- )
---
--- SPECS:
--- 'Waist Width mm: 124
--- Length cm: 188 cm
--- Shape mm: 147-124-146
--- Sidecut m: 17 (188 cm)
--- Stance mm: -20 Erics Choice
--- Weight: 2100g/ski (188)
--- Profile mm: 12-4-12
--- (Tip Early Rise-Camber-Tail Early Rise)'
---
---
+
 -- INSERT INTO skis (name, price, description, details, image, specs)
 --   VALUES ('MAGNUM OPUS BY ERIC POLLARD', 950.00, 'ERIC POLLARD\\S GREATEST CREATION', 'The Magnum Opus rises above all powder skis with award-winning, intuitive edge-to-edge precision and impossibly lightweight performance brought to you by LINE pro Eric Pollard. The Opus is playful yet stable, with all-new bamboo sidewalls this season which add greater durability and dampness to your ride. With Pollard’s hunger for more funner skiing and 15 years of industry-leading powder ski innovation to back it up, the LINE Magnum Opus just keeps on singing.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_magnum-opus_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 124,
 --     Length cm: 188 cm,
@@ -132,3 +131,47 @@ INSERT INTO users (username, email, password)
  VALUES ($1,
          $2,
          $3)
+
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('POLLARDS PAINT BRUSH', 100.00, 'An Adjustable Pole With Pollard Style', 'Artist and pro skier Eric Pollard has gifted LINE with yet another masterpiece – Pollard’s Paint Brush is an adjustable aluminum freeride ski pole with Screw It All!™ screwdriver-style tips for fine-tuned powder grabbing.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_pollards-paint-brush-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: Adjustable 100-130 (40-52 in)
+--   Weight: 245g/stick (100 cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('TOM WALLISCHTICK', 85.00, 'Toms New Pro Pointy Stick', 'The Wallischtick adds more powder-punching power to the LINE collection. This lightweight and sturdy ski pole is Tom Wallischs choice – Wallisch + Stick = Wallischstick. Get it? 9 out of 10 people dont, but that’s okay. You can be the one who does!', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_tom-wallischtick-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: 100-125 (40-50")
+-- Weight: 195g/stick (100 cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('GRIP STICK', 80.00, 'Freeride Poles With A Bite', 'Made with lightweight aluminum, the Grip Stick is the only LINE pole that boasts the bite of Snake Grip™ – a contoured grip built for the best hand hugs. The Grip Stick does exactly what it says – grips and sticks (and then unsticks) for unimpaired freeriding.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_grip-stick_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: 100-125 (40-50")
+-- Weight: 200g/stick (100 cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('WHIP', 90.00, 'More Durable Than You!', 'ts durable fiberglass shaft means this pole will Whip between turns, withstanding weather and getting after your dream lines. Easily switch between two Screwoff!™ baskets – 60mm and 90mm – depending on the conditions, and get right back to it.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_whip-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: 100-125 (40-50")
+-- Weight: 200g per stick (105cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('PIN', 70.00, 'The #1 Pointy Park Sticks', 'Punch it, poke it, pin it – the Pin ski pole has simple and lightweight aluminum construction built for hard charging and precise turns. LINE Grab Tabs™ help keep your hand and this pointy stick’s BMX Rubber grip in a loving relationship, come pow or high water.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_pin-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: 90-115 (36-46")
+-- Weight: 195g/stick (105cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('TAC', 55.00, 'Slimmed Design, Slimmer Cost', 'With a fresh make-over, the Tac ski pole is ready to tackle the new season – without breaking the bank. 100% simple, light, and affordable, this aluminum shaft with slimmed-down performance baskets and new adjustable webbing strap make the Tac the perfect pointy stick to stir all-resort mayhem in style.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_tac-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: 90-110 (36-44")
+-- Weight: 175g/stick (105cm/40" length)');
+-- INSERT INTO poles (name, price, description, details, image, specs)
+--   VALUES ('GET UP', 55.00, 'Grows With Your Grom', 'Groms will reach new heights with this adjustable pointy stick that’s designed to expand with them as they expand upward in height and skill on the slopes. The Get UP is the lightweight ski pole that’ll keep ‘em on their feet time and time again.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_get-up_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: Adjustable 75-105 (30-42 in)
+-- Weight: 210g/stick (100 cm/40" length)');
+
+
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Troy Tippetts', 52, 'PC', 'https://instagram.fsnc1-5.fna.fbcdn.net/t51.2885-19/11373988_440530339405214_1320781659_a.jpg', 'The GodFather');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Tiffany Denny', 46, 'SnowBasin', 'https://instagram.fsnc1-5.fna.fbcdn.net/t51.2885-19/s320x320/14279030_326655081017988_1249247857_a.jpg', 'Momma T likes to take long walks on the beach');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Colton Tippetts', 27, 'Woodland Realm', 'https://instagram.fsnc1-5.fna.fbcdn.net/t51.2885-15/e35/13392743_1746898288927319_392793637_n.jpg?ig_cache_key=MTI2NjkxNjY5MDE1MjMzODcxOQ%3D%3D.2', 'The Eldest of the Tippetts clan and has served the mountains well');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Bree Tippetts', 23, 'Unknown', 'https://instagram.fsnc1-5.fna.fbcdn.net/t51.2885-19/s320x320/14099840_1181750645229586_1057498972_a.jpg', 'Wife of Colton Seer of the realms');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Carson Tippetts', 25, 'PC', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/14440839_945010078978555_7768166217823726165_n.jpg?oh=1911265a642ebdddfb95b1c60585d699&oe=58CDBD9D', 'A Family Man');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Lindsay Tippetts', 28, 'Unknown', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/14222303_10102798292845679_2376778644866032980_n.jpg?oh=a25c2ea5e48d989bfbe702af68ccfa22&oe=5899CE4A', 'Wife of Carson Mother of all');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Noah Tippetts', 20, 'PC', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/13015608_866133700178724_2571699191736064746_n.jpg?oh=d6ec97ac87621eeb0ea2b12ce3f17e1a&oe=5895A613', 'Creater of this Web App');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Kelsie Wolfley', 21, 'salmon', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/14021742_10207065401016287_2683886757193148555_n.jpg?oh=1bea835ec891302194615d3c03a6dc16&oe=58951E3D', 'The chosen one');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Jake Tippetts', 18, 'PC', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/13322139_1003279739768718_187625186339153088_n.jpg?oh=bfe0d3c77826812319718803bcafba67&oe=5887309D', 'The pretty one');
+-- INSERT INTO teams (name, age, homemountain, profileimg, bio)
+--   VALUES ('Libbey Tippetts', 15, 'PC', 'https://scontent.fsnc1-5.fna.fbcdn.net/v/t1.0-9/13934646_310123446005364_891413060105398292_n.jpg?oh=6a3de5ff601bb43b26940b4b13f1afb0&oe=58CE0D50', 'The youngest and tuffest');
