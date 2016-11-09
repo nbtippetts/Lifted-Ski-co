@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./style/video.css" media="screen"/>
     <link rel="stylesheet" href="./style/team.css" media="screen"/>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
 
  <section class="header">
    <nav class="navbar navbar-inverse">
@@ -32,16 +32,30 @@
            <ul class="dropdown-menu">
                <h2>Sign up!</h2>
                <form class="newUser">
-            		    <input id="username" type="text" ng-model="user.username" placeholder="Username">
+            		    <input name="username" type="text" ng-model="user.username" placeholder="Username">
                     <br/>
-                    <input id="email" type="text" ng-model="user.email" placeholder="Email Address">
+                    <input name="password" type="password" ng-model="user.password" placeholder="Password">
                     <br/>
-                    <input id="password" type="text" ng-model="user.password" placeholder="Password">
-                    <br/>
-                    <button ng-sref="home" ng-click="newUser(user)">BECOME A CREW MEMBER</button>
+                    <button ng-click="newUser(user)">BECOME A CREW MEMBER</button>
                </form>
              </ul>
            </li>
+           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">LOGIN FOR THE NARR!!! <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <h2>Login</h2>
+                 <form class="newUser" ng-submit="login(username, password)">
+                    <label>Username:</label>
+                    <input name="username" type="text" placeholder="username" ng-model="username"/>
+                    <br />
+                    <label>PassWord:</label>
+                    <input name="password" type="password" placeholder="password" ng-model="password"/>
+                    <br />
+                    <input type="submit" value="Login">
+                 </form>
+                 <a href="/auth/me"><button class="button-primary">LOGIN</button></a>
+                 <a href="/auth/logout"><button class="button-primary">Logout</button></a>
+              </ul>
+            </li>
          </div>
        </ul>
     </nav>
@@ -56,7 +70,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
       <script src="./js/app.js"></script>
       <script src="./js/service.js"></script>
-      <script src="./js/controllers/homeCtrl.js"></script>
+      <script src="./js/controllers/mainCtrl.js"></script>
       <script src="./js/controllers/skisCtrl.js"></script>
       <script src="./js/controllers/detailsCtrl.js"></script>
       <script src="./js/controllers/polesCtrl.js"></script>

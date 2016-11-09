@@ -5,7 +5,7 @@ angular.module('liftedSki', ['ui.router'])
       .state('home', {
         url: '/',
         templateUrl: '../view/home.html',
-        controller: 'homeCtrl'
+        controller: 'mainCtrl'
       })
 
       .state('skis', {

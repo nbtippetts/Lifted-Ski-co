@@ -2,13 +2,6 @@
 
   module.exports = {
 
-    newUser: function(req, res, next){
-      var db = app.get('db');
-
-      db.create_product([req.body.username, req.body.email, req.body.password], function(err, user){
-        res.send(user)
-      })
-    },
 
     getSki: function(req, res, next){
       var db = app.get('db');

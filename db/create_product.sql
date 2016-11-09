@@ -8,12 +8,11 @@
 --   specs TEXT
 -- )
 
- CREATE TABLE users (
-   ID SERIAL PRIMARY KEY NOT NULL,
-   username VARCHAR(50),
-   email VARCHAR(50),
-   password VARCHAR(50)
- )
+ -- CREATE TABLE users (
+ --   ID SERIAL PRIMARY KEY NOT NULL,
+ --   username VARCHAR(50),
+ --   password VARCHAR(50)
+ -- )
 
  -- CREATE TABLE teams (
  --   ID SERIAL PRIMARY KEY NOT NULL,
@@ -127,10 +126,6 @@
     -- Profile mm: 8-4-3,
     -- (Tip Early Rise-Camber-Tail Early Rise)');
 
-INSERT INTO users (username, email, password)
- VALUES ($1,
-         $2,
-         $3)
 
 -- INSERT INTO poles (name, price, description, details, image, specs)
 --   VALUES ('POLLARDS PAINT BRUSH', 100.00, 'An Adjustable Pole With Pollard Style', 'Artist and pro skier Eric Pollard has gifted LINE with yet another masterpiece – Pollard’s Paint Brush is an adjustable aluminum freeride ski pole with Screw It All!™ screwdriver-style tips for fine-tuned powder grabbing.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_pollards-paint-brush-pole_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: Adjustable 100-130 (40-52 in)
