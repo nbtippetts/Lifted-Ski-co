@@ -1,3 +1,0 @@
-SELECT *
-FROM poles
-WHERE ID = $1;

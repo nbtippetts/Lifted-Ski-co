@@ -1,136 +1,116 @@
-  var fs = require('fs');
-  var https = require('https');
-
-  var express = require('express');
-  var bodyParser = require('body-parser');
-  var cookieParser = require('cookie-parser');
-  var session = require('express-session');
-  var cors = require('cors');
-  var massive = require('massive');
-  var passport = require('passport');
-  var LocalStrategy = require('passport-local').Strategy;
-  var passportHttp = require('passport-http');
-  var connectionString = "postgres://postgres:otb4life@localhost/skiCo";
-  var config = require('./config.js');
-  var port = 2244;
+  //require nessesary node modules
+  var express = require('express'),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    cors = require('cors'),
+    config = require('./config.js'),
+    passport = require('passport'),
+    massive = require('massive'),
+    connectionString = "postgres://postgres:otb4life@localhost/skiCo";
 
 
   var app = module.exports = express();
+    //exporting express to files
 
-  var server = https.createServer({
-    cert: fs.readFileSync(__dirname + '/my.crt'),
-    key: fs.readFileSync(__dirname + '/my.key')
-   }, app);
+    var corsOptions = {
+       origin: 'http://localhost:2244',
+       optionsSuccessStatus: 200
+    };
+
+
+  //Middleware for modules
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(cors('corsOptions'));
+  app.use(cookieParser());
+  app.use(session({
+    secret: config.sessionSecret,
+    resave: false,
+    saveUninitialized: true
+  }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(express.static(__dirname + './../public'));
 
 
   var massiveServer = massive.connectSync({connectionString: connectionString});
 
+  //use initialize passport and passport session for A
+   app.set('db', massiveServer);
+   //connecting server to db folder and postgres database
 
-  var corsOptions = {
-    origin: 'http://localhost:2244'
-  };
+   var db = app.get('db');
+   //get db folder
 
-
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(cookieParser());
-  app.use(cors('corsOptions'));
-  app.use(session({
-    secret: config.sessionSecret,
-    saveUninitialized: true,
-    resave: true
-  }));
-
-  app.use(passport.initialize());
-  app.use(passport.session());
-
-  app.use(express.static('public'));
-  console.log('this is dirname', __dirname)
-
-  app.set('db', massiveServer);
+   var productCtrl = require('./controllers/productCtrl'),
+    adminCtrl = require('./controllers/adminCtrl'),
+    customerCtrl = require('./controllers/customerCtrl'),
+    orderCtrl = require('./controllers/orderCtrl');
 
 
-  var db = app.get('db');
 
-  passport.use(new LocalStrategy(varifyCred));
-
-  passport.use(new passportHttp.BasicStrategy(varifyCred));
-
-    function varifyCred(username, password, done) {
-      db.users.findOne({username: username}, function(err, user) {
-        if (err) { return done(err); }
-        if (!user) { return done(null, false); }
-        if (user.password != password) { return done(null, false); }
-        return done(null, user);
-        })
-      }
+  // app.get('/api/skis/ski:id', productCtrl.getSki);
+  //
+  // app.get('/api/skis', productCtrl.getAll);
+  //
+  // app.get('/api/poles/pole:id', productCtrl.getSkiPoles);
+  //
+  // app.get('/api/poles', productCtrl.getAllPoles);
+  //
+  // app.get('/api/teams', productCtrl.getTeams);
+  //
+  // app.get('/api/teams/team:id', productCtrl.getTeam);
 
 
-  passport.serializeUser(function(user, done) {
-  done(null, user.id);
-  })
+//GET\\
+app.get('/api/admin', adminCtrl.getAllAdmins);
+app.get('/api/admin/:id', adminCtrl.getAdmin);
 
-  passport.deserializeUser(function(id, done) {
-    db.get_userId([id], function(err, user) {
-      user = user[0];
-      if (err) console.log(err);
-      else console.log('RETRIEVED USER');
-      console.log(user);
-      done(null, user);
-    })
-  })
+app.get('/api/products', productCtrl.getAllProducts);
+app.get('/api/products/:id', productCtrl.getProduct);
 
-  function ensureAuthenticated(req, res, next) {
-    if (req.user) {
-      next()
-    } else {
-      res.status(404)
-    }
-  }
+app.get('/api/customers', customerCtrl.getAllCustomers);
+app.get('/api/customers/:id', customerCtrl.getCustomer);
 
+app.get('/api/orders', orderCtrl.getAllOrders);
+app.get('/api/orders/:id', orderCtrl.getOrder);
 
-  app.get('/auth/me', function(req, res) {
-    if (!req.user) return res.sendStatus(404);
-    else res.status(200).send(req.user);
-  })
+//POST\\
+app.post('/api/adimn', adminCtrl.createAdmin);
+app.post('/api/products', productCtrl.createProduct);
+app.post('/api/customers', customerCtrl.createCustomer);
+app.post('/api/orders', orderCtrl.createOrder);
 
-  app.post('/auth/local', passport.authenticate('local'), function(req, res) {
-    res.status(200).send();
-  });
+//PUT\\
+app.put('api/admin', adminCtrl.updateAdmin);
+app.put('/api/products', productCtrl.updateProduct);
+app.put('/api/customers', customerCtrl.updateCustomer);
 
+//DELETE\\
+app.delete('/api/admin', adminCtrl.deleteAdmin);
+app.delete('/api/products/:id', productCtrl.deleteProduct);
+app.delete('/api/customers', customerCtrl.deleteCustomer);
 
-  app.get('/auth/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
-  })
-
-  app.use('/api', passport.authenticate('basic', { session: false }));
-
-  app.get('/api/data', function(req, res){
-    res.status(200).send(req.user.username);
-  })
-
-  var serverCtrl = require('./productCtrl');
-  var userCtrl = require('./userCtrl');
-
-  app.get('/api/skis/ski:id', serverCtrl.getSki);
-
-  app.get('/api/skis', serverCtrl.getAll);
-
-  app.get('/api/poles/pole:id', serverCtrl.getSkiPoles);
-
-  app.get('/api/poles', serverCtrl.getAllPoles);
-
-  app.get('/api/teams', serverCtrl.getTeams);
-
-  app.get('/api/teams/team:id', serverCtrl.getTeam);
-
-  app.post('/api/user', userCtrl.newUser);
+  //app.post('/api/users', userCtrl.newUser);
 
   //app.get('/api/users/user:id?id=', userCtrl.getUserId);
 
+  // app.post('/auth/local/register', passportCtrl.register);
+  // app.post('/auth/local', passport.authenticate('local'), function(req, res) {
+  // //This is only called if login was Successfully
+  // res.redirect('/#/skis');
+  // });
+  //
+  // app.get('/auth/logout', function(req, res) {
+  //   console.log('logout')
+  //   req.logout();
+  //   res.redirect('/');
+  // })
+//user logout
 
 
-  server.listen(port, function(){
+ var port = 2244;
+  app.listen(port, function(){
     console.log('send it', port);
   })

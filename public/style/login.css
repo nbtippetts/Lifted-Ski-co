@@ -1,0 +1,35 @@
+body{
+  /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#DFE2DB), to(#2F2727));
+
+  /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #DFE2DB, #2F2727);
+
+  /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #DFE2DB, #2F2727);
+
+  /* IE 10 */
+    background: -ms-radial-gradient(circle, #DFE2DB, #2F2727);
+    height:600px;
+}
+
+label {
+  color: #333;
+}
+
+#lower button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  background-color: #337ab7;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px 4px;
+}
+
+
+
+.container {
+  width: 40%;
+  margin-bottom: 2%;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="liftedSki">
+<html lang="en" ng-app="liftedSki">
   <head>
     <meta charset="utf-8">
     <title>LiftedSkiCo</title>
@@ -9,55 +9,36 @@
     <link rel="stylesheet" href="./style/details.css" media="screen"/>
     <link rel="stylesheet" href="./style/video.css" media="screen"/>
     <link rel="stylesheet" href="./style/team.css" media="screen"/>
+    <link rel="stylesheet" href="./style/login.css" media="screen"/>
   </head>
   <body ng-controller="mainCtrl">
 
  <section class="header">
    <nav class="navbar navbar-inverse">
      <div class="container-fluid">
+
        <div class="navbar-header">
-         <a class="navbar-brand" ui-sref="home">LIFTED SKI.co</a>
+         <a class="navbar-brand" ui-sref="home"><h2>LIFTED SKI.co</h2></a>
        </div>
+
        <ul class="nav navbar-nav">
          <li class="active"><a ui-sref="home">LIFTED</a></li>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">SKIS & GEAR <span class="caret"></span></a>
+
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><h5>SKIS & GEAR</h5> <span class="caret"></span></a>
            <ul class="dropdown-menu" id="dropdown1">
              <li><a ui-sref="skis"><h1>SKIS</h1>  <img src="http://us.123rf.com/450wm/miceking/miceking1506/miceking150602616/41477596-skis-snowflakes-croises.jpg" alt="ski image" height="80px" width="50px"/></a></li>
              <li><a ui-sref="poles"><h1>POLES</h1>  <img src="http://www.iconshock.com/img_vista/IPHONE/sports/jpg/ski_poles_icon.jpg" alt="poles image" height="80px" width="60px"/></a></li>
              <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="http://marienthal.snj.lu/sites/default/files/plainicon.com-46501-256px-930_0.png" alt="video icon" height="50px" width="50px" /></a></li>
            </ul>
          </li>
-         <li><a ui-sref="team">The Team</a></li>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">JOIN THE CREW <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-               <h2>Sign up!</h2>
-               <form class="newUser">
-            		    <input name="username" type="text" ng-model="user.username" placeholder="Username">
-                    <br/>
-                    <input name="password" type="password" ng-model="user.password" placeholder="Password">
-                    <br/>
-                    <button ng-click="newUser(user)">BECOME A CREW MEMBER</button>
-               </form>
-             </ul>
-           </li>
-           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">LOGIN FOR THE NARR!!! <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-                 <h2>Login</h2>
-                 <form class="newUser" ng-submit="login(username, password)">
-                    <label>Username:</label>
-                    <input name="username" type="text" placeholder="username" ng-model="username"/>
-                    <br />
-                    <label>PassWord:</label>
-                    <input name="password" type="password" placeholder="password" ng-model="password"/>
-                    <br />
-                    <input type="submit" value="Login">
-                 </form>
-                 <a href="/auth/me"><button class="button-primary">LOGIN</button></a>
-                 <a href="/auth/logout"><button class="button-primary">Logout</button></a>
-              </ul>
-            </li>
-         </div>
-       </ul>
+
+          <li><a ui-sref="team"><h4>The Team</h4></a></li>
+          <li><a ui-sref="products">Search Products</a></li>
+          <li><a ui-sref="cart" ng-cart=""><h4>Cart</h4></a></li>
+          <!-- here we get the logout url from our server to run the logout function  -->
+         </ul>
+         <a href="/auth/logout"><button style="background-color: #333">Logout</button></a>
+       </div>
     </nav>
   </section>
 
@@ -71,6 +52,8 @@
       <script src="./js/app.js"></script>
       <script src="./js/service.js"></script>
       <script src="./js/controllers/mainCtrl.js"></script>
+      <script src="./view/products/allProductsCtrl.js"></script>
+      <script src="./view/products/singleProductCtrl.js"></script>
       <script src="./js/controllers/skisCtrl.js"></script>
       <script src="./js/controllers/detailsCtrl.js"></script>
       <script src="./js/controllers/polesCtrl.js"></script>
