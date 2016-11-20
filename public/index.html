@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <title>LiftedSkiCo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="./style/animate.css" media="screen"/>
     <link rel="stylesheet" href="./style/home.css" media="screen"/>
     <link rel="stylesheet" href="./style/skis.css" media="screen"/>
     <link rel="stylesheet" href="./style/details.css" media="screen"/>
     <link rel="stylesheet" href="./style/video.css" media="screen"/>
     <link rel="stylesheet" href="./style/team.css" media="screen"/>
     <link rel="stylesheet" href="./style/login.css" media="screen"/>
+    <link rel="stylesheet" href="./style/cart.css" media="screen"/>
   </head>
   <body ng-controller="mainCtrl">
 
@@ -26,38 +29,38 @@
 
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><h5>SKIS & GEAR</h5> <span class="caret"></span></a>
            <ul class="dropdown-menu" id="dropdown1">
-             <li><a ui-sref="skis"><h1>SKIS</h1>  <img src="http://us.123rf.com/450wm/miceking/miceking1506/miceking150602616/41477596-skis-snowflakes-croises.jpg" alt="ski image" height="80px" width="50px"/></a></li>
-             <li><a ui-sref="poles"><h1>POLES</h1>  <img src="http://www.iconshock.com/img_vista/IPHONE/sports/jpg/ski_poles_icon.jpg" alt="poles image" height="80px" width="60px"/></a></li>
+            <li><a ui-sref="products"><h1>SHOP</h1> <img src="http://us.123rf.com/450wm/miceking/miceking1506/miceking150602616/41477596-skis-snowflakes-croises.jpg" alt="ski image" height="80px" width="50px"/></a></li>
              <li><a ui-sref="video"><h1>VIDEOS</h1>  <img src="http://marienthal.snj.lu/sites/default/files/plainicon.com-46501-256px-930_0.png" alt="video icon" height="50px" width="50px" /></a></li>
            </ul>
          </li>
 
           <li><a ui-sref="team"><h4>The Team</h4></a></li>
-          <li><a ui-sref="products">Search Products</a></li>
-          <li><a ui-sref="cart" ng-cart=""><h4>Cart</h4></a></li>
+          <li><a ui-sref="order"><h4>Cart</h4></a></li>
           <!-- here we get the logout url from our server to run the logout function  -->
          </ul>
-         <a href="/auth/logout"><button style="background-color: #333">Logout</button></a>
+         <!-- <a href="/auth/logout"><button style="background-color: #333">Logout</button></a> -->
        </div>
     </nav>
   </section>
 
+
     <ui-view></ui-view>
+   
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/ngcart/dist/ngCart.js"></script>
 
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
       <script src="./js/app.js"></script>
       <script src="./js/service.js"></script>
       <script src="./js/controllers/mainCtrl.js"></script>
       <script src="./view/products/allProductsCtrl.js"></script>
       <script src="./view/products/singleProductCtrl.js"></script>
-      <script src="./js/controllers/skisCtrl.js"></script>
-      <script src="./js/controllers/detailsCtrl.js"></script>
-      <script src="./js/controllers/polesCtrl.js"></script>
-      <script src="./js/controllers/poleDetailsCtrl.js"></script>
+      <script src="./view/order/orderCtrl.js"></script>
       <script src="./js/controllers/teamCtrl.js"></script>
       <script src="./js/controllers/teamDetailsCtrl.js"></script>
   </body>

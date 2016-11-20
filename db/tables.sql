@@ -96,6 +96,15 @@ CREATE TABLE order_confirmation (
   customer_ID                    INTEGER REFERENCES customers NOT NULL,
   product_ID                     INTEGER REFERENCES products NOT NULL
 );
+
+CREATE TABLE teams (
+  ID SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50),
+  age INTEGER,
+  homemountain TEXT,
+  profileimg TEXT,
+  bio TEXT
+);
 -- product_name, product_description, product_price, product_image_url
 -- INSERT INTO products (product_name, product_price, product_description, product_details, product_image_url, product_specs)
 --   VALUES ('MAGNUM OPUS BY ERIC POLLARD', 950.00, 'ERIC POLLARD\\S GREATEST CREATION', 'The Magnum Opus rises above all powder skis with award-winning, intuitive edge-to-edge precision and impossibly lightweight performance brought to you by LINE pro Eric Pollard. The Opus is playful yet stable, with all-new bamboo sidewalls this season which add greater durability and dampness to your ride. With Pollard’s hunger for more funner skiing and 15 years of industry-leading powder ski innovation to back it up, the LINE Magnum Opus just keeps on singing.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_magnum-opus_top?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Waist Width mm: 124,
@@ -213,7 +222,7 @@ CREATE TABLE order_confirmation (
 --   VALUES ('GET UP', 55.00, 'Grows With Your Grom', 'Groms will reach new heights with this adjustable pointy stick that’s designed to expand with them as they expand upward in height and skill on the slopes. The Get UP is the lightweight ski pole that’ll keep ‘em on their feet time and time again.', 'http://s7d5.scene7.com/is/image/TheGoods/line_1617_get-up_pole?hei=2000&wid=888&resMode=bicub&iccembed=1&fmt=png-alpha&op_usm=1,1', 'Length cm: Adjustable 75-105 (30-42 in)
 -- Weight: 210g/stick (100 cm/40" length)');
 
-
+--
 -- INSERT INTO teams (name, age, homemountain, profileimg, bio)
 --   VALUES ('Troy Tippetts', 52, 'PC', 'https://instagram.fsnc1-5.fna.fbcdn.net/t51.2885-19/11373988_440530339405214_1320781659_a.jpg', 'The GodFather');
 -- INSERT INTO teams (name, age, homemountain, profileimg, bio)

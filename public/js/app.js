@@ -1,11 +1,11 @@
-angular.module('liftedSki', ['ui.router'])  //ui.router is awesome
+angular.module('liftedSki', ['ui.router', 'ngCart'])  //ui.router is awesome
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: '../view/home.html',
-        controller: 'mainCtrl'
+        controller: 'singleProductCtrl'
       })
 
       .state('products', {
@@ -20,48 +20,32 @@ angular.module('liftedSki', ['ui.router'])  //ui.router is awesome
         controller: 'singleProductCtrl'
       })
 
+      .state('order', {
+        url: '/order/id',
+        templateUrl: '../view/order/order.html',
+        controller: 'mainCtrl'
+      })
 
-      // .state('skis', {
-      //   url: '/skis',
-      //   templateUrl: '../view/skis.html',
-      //   controller: 'skisCtrl'
-      // })
-      //
-      // .state('poles', {
-      //   url: '/poles',
-      //   templateUrl: '../view/poles.html',
-      //   controller: 'polesCtrl'
-      // })
-      //
-      // .state('video', {
-      //   url: '/video',
-      //   templateUrl: '../view/video.html'
-      // })
-      //
-      // .state('team', {
-      //   url: '/team',
-      //   templateUrl: '../view/team.html',
-      //   controller: 'teamCtrl'
-      // })
-      //
-      // .state('details', {
-      //   url: '/details/:id',
-      //   templateUrl: '../view/details.html',
-      //   controller: 'detailsCtrl'
-      // })
-      //
-      // .state('poleDetails', {
-      //   url: '/poleDetails/:id',
-      //   templateUrl: '../view/poleDetails.html',
-      //   controller: 'poleDetailsCtrl'
-      // })
-      //
-      // .state('teamDetails', {
-      //   url: '/teamDetails/:id',
-      //   templateUrl: '../view/teamDetails.html',
-      //   controller: 'teamDetailsCtrl'
-      // })
-      //
+      .state('team', {
+        url: '/team',
+        templateUrl: '../view/team.html',
+        controller: 'teamCtrl'
+      })
+
+      .state('teamDetails', {
+        url: '/teamDetails/:id',
+        templateUrl: '../view/teamDetails.html',
+        controller: 'teamDetailsCtrl'
+      })
+
+      .state('video', {
+        url: '/video',
+        templateUrl: '../view/videos.html'
+      })
+
+
+
+
        $urlRouterProvider
          .otherwise('/');
 

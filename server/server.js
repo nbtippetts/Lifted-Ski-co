@@ -50,17 +50,17 @@
 
 
 
-  // app.get('/api/skis/ski:id', productCtrl.getSki);
-  //
+  //app.get('/api/skis/ski:id', productCtrl.getSki);
+
   // app.get('/api/skis', productCtrl.getAll);
   //
   // app.get('/api/poles/pole:id', productCtrl.getSkiPoles);
   //
   // app.get('/api/poles', productCtrl.getAllPoles);
   //
-  // app.get('/api/teams', productCtrl.getTeams);
-  //
-  // app.get('/api/teams/team:id', productCtrl.getTeam);
+  app.get('/api/teams', productCtrl.getTeams);
+
+  app.get('/api/teams/team:id', productCtrl.getTeam);
 
 
 //GET\\

@@ -1,12 +1,8 @@
-angular.module('liftedSki').controller('mainCtrl', function($scope, skiService, $stateParams, $state) {
+angular.module('liftedSki').controller('mainCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
+    ngCart.setTaxRate(7.5);
+    ngCart.setShipping(2.99);
+}]);
 
-
-
-  
-  //
-  // login()
-  //
-  //
   // $scope.login = function(username, password) {
   //   console.log('Logging in with', username);
   //   skiService.login({
@@ -28,5 +24,3 @@ angular.module('liftedSki').controller('mainCtrl', function($scope, skiService, 
   // $scope.login = skiService.login;
   // $scope.logout = skiService.logout;
   // //$scope.getUserId($stateParams.id);
-
-})

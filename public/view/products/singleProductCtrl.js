@@ -1,14 +1,11 @@
 angular.module('liftedSki').controller('singleProductCtrl', function($scope, $state, $stateParams, skiService) {
 
-    $scope.state = $state;
+  $scope.getProduct = function(){
+      skiService.getProduct($stateParams.id).then(function(response){
+      $scope.product = response.data[0];
+      });
+    }
 
-    $scope.getProduct = function(id) {
-        skiService.getProduct().then(function(response) {
-            if (response.data.product_id === $stateParams.id) {
-                $scope.product = response.data;
-            }
-        });
-    };
-    $scope.getProduct();
+  $scope.getProduct();
 
 });

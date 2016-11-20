@@ -4,16 +4,24 @@ angular.module('liftedSki').service('skiService', function($http) {
   this.getProduct = function(id) {
       return $http({
         method: 'GET',
-        url: '/api/products/:id' + id
+        url: 'http://localhost:2244/api/products/' + id
       });
   }
 
   this.getAllProducts = function(){
       return $http({
         method: 'GET',
-        url: '/api/products'
+        url: 'http://localhost:2244/api/products/'
       });
-    };
+    }
+
+    this.createProduct = function(product){
+       return $http({
+         url: 'http://localhost:2244/api/product/',
+         method: 'POST',
+         data: product
+       });
+    }
 
 
   //this service holds all of the http call to the server for now
@@ -94,18 +102,18 @@ angular.module('liftedSki').service('skiService', function($http) {
   //   });
   // }
   //
-  // this.getTeams = function(){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/teams'
-  //   });
-  // }
-  //
-  // this.getTeam = function(id){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/teams/team:id?id=' + id
-  //   });
-  // }
+  this.getTeams = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/teams'
+    });
+  }
+
+  this.getTeam = function(id){
+    return $http({
+      method: 'GET',
+      url: '/api/teams/team:id?id=' + id
+    });
+  }
 
 })

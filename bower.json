@@ -1,0 +1,27 @@
+{
+  "name": "lifted-ski-co",
+  "description": "Ski Company",
+  "main": "server/server.js",
+  "authors": [
+    "Noah Tippetts"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Ski.co"
+  ],
+  "homepage": "https://github.com/nbtippetts/Lifted-Ski-co",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngCart": "ngcart#^1.0.0",
+    "angular": ">=1.2.x"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.x"
+  }
+}

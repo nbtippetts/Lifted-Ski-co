@@ -10,4 +10,6 @@ angular.module('liftedSki').controller('allProductsCtrl', function($scope, $stat
     };
     $scope.getAllProducts();
 
+    
+
 });
