@@ -40,7 +40,7 @@ angular.module('liftedSki', ['ui.router', 'ngCart'])  //ui.router is awesome
 
       .state('video', {
         url: '/video',
-        templateUrl: '../view/videos.html'
+        templateUrl: '../view/video.html'
       })
 
 

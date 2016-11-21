@@ -49,4 +49,16 @@ h3 { color:#1758AA}
 h3 span {font-size:14px; display:block;}
 span[ng-click] {
         cursor: pointer;
-    }
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.shop {
+  color: white;
+  float: right;
+  padding-right: 5%;
+}
